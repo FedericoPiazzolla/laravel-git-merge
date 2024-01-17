@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('cocktails', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('price');
-            $table->string('type');
-            $table->boolean('is_alcolic');
+            $table->string('glass');
+            $table->text('instruction');
+            $table->string('image');
+            $table->string('is_alcoholic');
             $table->timestamps();
         });
     }

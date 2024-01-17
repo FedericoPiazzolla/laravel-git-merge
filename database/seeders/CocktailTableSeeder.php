@@ -41,7 +41,7 @@ class CocktailTableSeeder extends Seeder
 
         //
 
-        $rows = $this->getData(2);
+        $rows = $this->getData(8);
         
         foreach ($rows as $row) {
             $cocktail               = new Cocktail(); 
