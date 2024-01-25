@@ -62,9 +62,11 @@ class CocktailTableSeeder extends Seeder
         $client = new Client(['verify' => false]);
 
         for ($i = 0; $i < $total; $i++) {
+
             $response = $client->get($url);
             $row      = json_decode($response->getBody());
             $rows     = [...$rows, ...$row->drinks];
+            
         }
         return $rows;
     }
