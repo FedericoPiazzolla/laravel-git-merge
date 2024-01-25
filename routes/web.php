@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::resource('cocktails', CocktailController::class)->parameters(['cocktails' => 'cocktail:slug']);

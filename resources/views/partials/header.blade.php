@@ -7,11 +7,11 @@
       <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Home</a>
+            <a class="nav-link active" aria-current="page" href=" {{route('welcome')}}">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Cocktails List</a>
+            <a class="nav-link active" aria-current="page" href="{{route('cocktails.index')}}">Cocktails List</a>
           </li>
         </ul>
       </div>

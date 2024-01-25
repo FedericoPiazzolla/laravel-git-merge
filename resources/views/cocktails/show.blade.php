@@ -4,20 +4,20 @@
   <div class="container">
 
     <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="{{$cocktail->image}}" class="card-img-top" alt="{{$cocktail->name}}">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{$cocktail->name}}</h5>
+      <p class="card-text {{ $cocktail->is_alcoholic === 'Alcoholic' ? 'text-success' : 'text-danger' }}">{{$cocktail->is_alcoholic}}</p>
+      <p class="card-text">{{$cocktail->instruction}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">{{ $cocktail->glass}}</li>
+      <li class="list-group-item">{{ $cocktail->slug}}</li>
     </ul>
-    <div class="card-body">
+    {{-- <div class="card-body">
       <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a>
-    </div>
+    </div> --}}
   </div>
   
   </div>
