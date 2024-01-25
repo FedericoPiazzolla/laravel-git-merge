@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use illuminate\Support\Str;
 
 use Illuminate\Http\Request;
-
+use App\Models\Cocktail;
 class CocktailController extends Controller
 {
     /**
@@ -23,7 +24,7 @@ class CocktailController extends Controller
      */
     public function create()
     {
-        //
+        return view('cocktails.create');
     }
 
     /**
@@ -34,7 +35,13 @@ class CocktailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $cocktail = new Cocktail(); 
+        $cocktail->fill($form_data);
+        $cocktail->slug = Str::slug ($cocktail->name, '-');
+        $cocktail->save();
+        return redirect()->route('cocktails.show', ['cocktail' => $cocktail->slug]);
+        
     }
 
     /**
@@ -51,34 +58,38 @@ class CocktailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Cocktail $cocktail
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cocktail $cocktail)
     {
-        //
+        return view('cocktails.edit', compact('cocktail'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Cocktail $cocktail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cocktail $cocktail)
     {
-        //
+        $form_data = $request->all();
+        $cocktail->update($form_data);
+        return redirect()->route('cocktails.show',['cocktail'=>$cocktail->slug]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Cocktail $cocktail
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cocktail $cocktail)
     {
-        //
+        $cocktail->delete();
+        
+        return redirect()->route('cocktails.index')->with('message',"$cocktail->name è stato cancellato con successo!");
     }
 }
