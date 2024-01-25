@@ -1,5 +1,27 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-color: lightblue;
+  
+}
+
+header {
+  background-color: #ffa272;
+  img {
+    width: 100px;
+  }
+
+  .navbar-collapse {
+    ul {
+      height: 100%;
+    li{
+      a{
+        font-weight: bold;
+      }
+      &:hover {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+  }
+  
 }
