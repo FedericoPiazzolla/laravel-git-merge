@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <h1>Welcome to Laravel</h1>   loris schiappa  --}}
+    <h1>Benvenuto nella Pagina dei Cocktails</h1>
 @endsection
