@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use illuminate\Support\Str;
 
+use App\Models\Cocktail;
 use Illuminate\Http\Request;
 use App\Models\Cocktail;
 class CocktailController extends Controller
@@ -14,7 +15,10 @@ class CocktailController extends Controller
      */
     public function index()
     {
-        //
+        $cocktails = Cocktail::all();
+        
+        
+        return view('cocktails.index', compact('cocktails'));
     }
 
     /**
@@ -47,12 +51,12 @@ class CocktailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Cocktail $cocktail
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cocktail $cocktail)
     {
-        //
+        return view('cocktails.show', compact('cocktail'));
     }
 
     /**
