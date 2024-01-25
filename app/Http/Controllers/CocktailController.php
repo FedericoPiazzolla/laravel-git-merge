@@ -5,7 +5,7 @@ use illuminate\Support\Str;
 
 use App\Models\Cocktail;
 use Illuminate\Http\Request;
-use App\Models\Cocktail;
+
 class CocktailController extends Controller
 {
     /**
