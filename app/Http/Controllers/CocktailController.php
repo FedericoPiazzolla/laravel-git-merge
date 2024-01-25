@@ -49,6 +49,7 @@ class CocktailController extends Controller
      */
     public function show(Cocktail $cocktail)
     {
+        dd($cocktail);
         return view('cocktails.show', compact('cocktail'));
     }
 
