@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CocktailController;
+use App\Http\Controllers\IngredientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::resource('cocktails', CocktailController::class)->parameters(['cocktails' => 'cocktail:slug']);
+Route::resource('ingredients', IngredientController::class)->parameters(['ingredients' => 'ingredient:slug']);
