@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CocktailController;
 use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\TrashController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,6 @@ Route::get('/', function () {
 
 Route::resource('cocktails', CocktailController::class)->parameters(['cocktails' => 'cocktail:slug']);
 Route::resource('ingredients', IngredientController::class)->parameters(['ingredients' => 'ingredient:slug']);
+
+Route::get('trash', [TrashController::class, 'trash'])->name('trash');
+Route::get('restore/{id}', [TrashController::class, 'restore'])->name('restore');
