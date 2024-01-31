@@ -6,7 +6,7 @@
             <a class="btn btn-success" href="{{route('cocktails.create')}}">aggiungi un nuovo cocktail +</a>
         </div>
         
-        <div class="row row-col-4 gap-3 align-item-center my-5">
+        <div class="row row-col-4 g-5 align-item-center my-5">
             
             @foreach ($cocktails as $cocktail)
                 
