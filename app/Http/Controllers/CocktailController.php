@@ -98,4 +98,5 @@ class CocktailController extends Controller
         
         return redirect()->route('cocktails.index')->with('message',"$cocktail->name è stato cancellato con successo!");
     }
+
 }

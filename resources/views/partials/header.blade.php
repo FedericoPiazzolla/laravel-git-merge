@@ -13,6 +13,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('cocktails.index')}}">Cocktails List</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('trash')}}">Cocktails Trash</a>
+          </li>
         </ul>
       </div>
     </div>
