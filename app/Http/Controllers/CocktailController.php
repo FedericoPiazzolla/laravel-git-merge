@@ -15,8 +15,8 @@ class CocktailController extends Controller
      */
     public function index()
     {
-        $cocktails = Cocktail::all();
         
+        $cocktails  = Cocktail::paginate(4);
         
         return view('cocktails.index', compact('cocktails'));
     }
@@ -79,8 +79,10 @@ class CocktailController extends Controller
      */
     public function update(Request $request, Cocktail $cocktail)
     {
+        // dd($request);
         $form_data = $request->all();
         $cocktail->update($form_data);
+
         return redirect()->route('cocktails.show',['cocktail'=>$cocktail->slug]);
     }
 
