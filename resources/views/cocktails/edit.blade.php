@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('cocktails.update', ['cocktail' => $cocktail->slug])}} method="POST">
+        <form action="{{ route('cocktails.update', ['cocktail' => $cocktail->slug])}} " method="POST" >
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -25,7 +25,7 @@
 
                 <option selected>seleziona</option>
                 <option @selected($cocktail->is_alcholic === 'alcholic') value="alcholic">alcholic</option>
-                <option @selected($cocktail->is_alcholic != 'unalcholic') value="unalcholic">unalcholic</option>
+                <option @selected($cocktail->is_alcholic !== 'unalcholic') value="unalcholic">unalcholic</option>
 
             </select>
             <button type="submit" class="btn btn-primary">salva</button>
